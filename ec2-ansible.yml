@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Template to Launch ec2 instance
+Resources: 
+  LinuxBastionInstance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageId: ami-0c322300a1dd5dc79
+      InstanceType: t2.micro
+      KeyName: bright
+      AvailabilityZone: 
+      SecurityGroupIds:
+        - 
+        - 
+      BlockDeviceMappings:
+      - 
+        DeviceName: /dev/sdm
+        Ebs:
+          VolumeType: io1
+          Iops: 200
+          DeleteOnTermination: yes
+          VolumeSize: 10
